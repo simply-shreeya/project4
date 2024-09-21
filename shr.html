@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons Example</title>
+
+<script>
+function abc()
+{
+  var ele = document.getElementsByName("operation");
+   var opt;
+            for (i = 0; i < ele.length; i++) 
+             {
+                if (ele[i].checked)
+                    opt=ele[i].value;              
+              }
+               
+                var a=document.getElementById("N1").value;
+                var b=document.getElementById("N2").value;
+                if(opt=='+')
+                   var c=parseInt(a)+parseInt(b);
+                 else if(opt=='-')
+                   var c=parseInt(a)-parseInt(b);
+                else if(opt=='/')
+                   var c=parseInt(a)/parseInt(b);
+                else if(opt=='*')
+                   var c=parseInt(a)*parseInt(b);
+                
+                document.getElementById("N3").value=c;
+}
+
+</script>
+</head>
+<body>
+Enter No : <input type="text" id="N1"> </input>
+<br>
+Enter No : <input type="text" id="N2"></input>
+<br>
+<br>
+ <h2>Select your operation:</h2>
+
+        <input type="radio" id="+" name="operation" value="+">
+        <label>SUM</label><br>
+        
+        <input type="radio" id="-" name="operation" value="-">
+        <label >DIFF</label><br>
+        
+        <input type="radio" id="/" name="operation" value="/">
+        <label >DIVI</label><br>
+        
+        <input type="radio" id="*" name="operation" value="*">
+        <label >MULTI</label>
+<br>
+<button onclick="abc()">calculation</button>
+<br>
+<br>
+Result : <input type="text" id="N3"></input>
+
+ 
+
+</body>
